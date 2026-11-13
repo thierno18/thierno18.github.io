@@ -186,6 +186,14 @@ img, svg { max-width: 100%; }
 }
 
 
+.subrole { padding-bottom: 6px; }
+.subrole:last-child { padding-bottom: 0; }
+.job { padding-bottom: 16px; }
+details { margin-top: 6px; }
+details ul { margin-top: 6px; }
+details li { margin: 2px 0; }
+.chips { margin: 8px 0; }
+
 @page { size: A4; margin: 12mm; }
 @media print {
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
@@ -243,6 +251,6 @@ img, svg { max-width: 100%; }
 .tabs-in .lang { margin-left: auto; }
 .pdf-btn { flex: none; background: var(--accent); color: #fff; text-decoration: none; font-size: .85rem; padding: 6px 14px; border-radius: 8px; white-space: nowrap; transition: .2s; }
 .pdf-btn:hover { filter: brightness(1.1); transform: translateY(-1px); }
-.pdf-btn .short { display: none; }
-@media (max-width: 600px) { .pdf-btn .full { display: none; } .pdf-btn .short { display: inline; } .pdf-btn { padding: 6px 10px; } }
+.pdf-btn .short { display: none !important; }
+@media (max-width: 600px) { .pdf-btn { padding: 6px 9px; font-size: .78rem; } .tabs-in { gap: 6px; } .tab-links a { padding: 12px 8px; } }
 @media print { .pdf-btn { display: none !important; } }
