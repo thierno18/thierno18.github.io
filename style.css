@@ -174,3 +174,13 @@ main section { scroll-margin-top: 56px; }
 .tab-links { min-width: 0; }
 
 .job-desc a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+
+html { -webkit-text-size-adjust: 100%; }
+img, svg { max-width: 100%; }
+@media (max-width: 480px) {
+  .tab-links a { padding: 12px 9px; font-size: .82rem; }
+  .tabs-in { gap: 6px; }
+  .links a, .copy { font-size: .85rem; }
+  main section { margin: 40px 0; }
+  .job-head { flex-direction: column; gap: 0; }
+}
