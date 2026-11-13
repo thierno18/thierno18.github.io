@@ -244,6 +244,7 @@ function render(lang) {
     `<button type="button" class="copy" data-copy="${EMAIL}" data-label="${COPY_LABELS[lang].copy}" data-done="${COPY_LABELS[lang].done}">${COPY_LABELS[lang].copy}</button>` +
     `<a href="tel:${PHONE.replace(/\s/g, "")}">☎ ${PHONE}</a>` +
     LINKS.map((l) => `<a href="${l.href}" target="_blank" rel="noopener">${l.label}</a>`).join("") +
+    `<a class="pdf" href="assets/cv-thierno-diallo-${lang}.pdf" download>${lang === "fr" ? "Télécharger le CV (PDF)" : "Download CV (PDF)"}</a>` +
     `<span class="loc">${CONTACT_LABELS[lang].where}</span>`;
 
   const c = CONTACT_LABELS[lang];
@@ -335,3 +336,9 @@ document.addEventListener("click", async (e) => {
 
 $("year").textContent = new Date().getFullYear();
 render(initialLang());
+
+function openAllDetails() {
+  document.querySelectorAll("details").forEach((d) => (d.open = true));
+}
+window.addEventListener("beforeprint", openAllDetails);
+if (new URLSearchParams(location.search).has("print")) openAllDetails();

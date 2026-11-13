@@ -184,3 +184,60 @@ img, svg { max-width: 100%; }
   main section { margin: 40px 0; }
   .job-head { flex-direction: column; gap: 0; }
 }
+
+.links a.pdf { border-color: #3fd68f; color: #3fd68f; }
+.links a.pdf:hover { color: #fff; }
+
+@page { size: A4; margin: 12mm; }
+@media print {
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { background: #fff; color: #1c2420; font-size: 11px; line-height: 1.45; }
+  .tabs, .copy, .links a.pdf, .badge, .more summary, footer, .photo { display: none !important; }
+  .hero { background: #fff !important; color: #1c2420; padding: 0 0 10px; border-bottom: 2px solid #2e9e6a; }
+  .hero::before { display: none; }
+  h1 { font-size: 26px; color: #1c2420; }
+  .grad { background: none; color: #2e9e6a; -webkit-text-fill-color: #2e9e6a; }
+  .hero-grid { display: block; }
+  .role, .meta, .profile, .more p, .loc { color: #333; }
+  .role b { color: #2e9e6a; }
+  .profile { display: none; }
+  .more { margin: 6px 0 0; }
+  .more p { display: block; font-size: 11px; margin: 0; }
+  .links { margin-top: 8px; gap: 6px; }
+  .links a { color: #1c2420; border: 1px solid #bbb; background: none !important; padding: 2px 8px; font-size: 10.5px; }
+  main section { margin: 14px 0; }
+  h2 { margin-bottom: 10px; }
+  .job, .subrole, .skill { break-inside: avoid; }
+  .job { padding-bottom: 12px; }
+  .job-desc { color: #333; }
+  .chips li { font-size: 9px; padding: 1px 7px; }
+  details ul { font-size: 10.5px; }
+  .skill { background: none; padding: 8px 10px; }
+  .contact li { background: none; }
+}
+
+@media print {
+  html { font-size: 10px; }
+  body { font-size: 10px; }
+  summary { display: none !important; }
+  #contact { display: none; }
+  .job { break-inside: auto; padding-bottom: 8px; }
+  .job-head, .job-role, .job-desc, .chips { break-after: avoid; }
+  main section { margin: 10px 0; }
+  .skills { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .cols { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .hero-text { max-width: none; }
+  details ul { margin-top: 4px; }
+}
+
+@media print {
+  html { font-size: 9.5px; }
+  body { font-size: 9.5px; line-height: 1.38; }
+  #sec-edu, .cols > div, #sec-skills { break-inside: avoid; }
+  h2 { break-after: avoid; margin-bottom: 7px; }
+  details li { margin: 1px 0; }
+  .chips { margin: 5px 0; }
+  .subrole { padding-bottom: 8px; }
+  .job { padding-bottom: 6px; }
+  main section { margin: 8px 0; }
+}
