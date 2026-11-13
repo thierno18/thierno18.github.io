@@ -254,3 +254,10 @@ details li { margin: 2px 0; }
 .pdf-btn .short { display: none !important; }
 @media (max-width: 600px) { .pdf-btn { padding: 6px 9px; font-size: .78rem; } .tabs-in { gap: 6px; } .tab-links a { padding: 12px 8px; } }
 @media print { .pdf-btn { display: none !important; } }
+
+@media print {
+  .subrole { break-inside: auto; }
+  .subrole .role-date, .subrole .job-role, .subrole .job-desc, .subrole .chips { break-after: avoid; }
+  details li { break-inside: avoid; }
+  details ul { orphans: 3; widows: 3; }
+}
