@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thierno Diallo — Développeur Full Stack Java / Angular</title>
+  <meta name="description" content="Portfolio de Thierno Diallo, développeur Full Stack Java / Angular : Spring Boot, Angular, PostgreSQL, Docker, Azure.">
+  <meta property="og:title" content="Thierno Diallo — Développeur Full Stack Java / Angular">
+  <meta property="og:description" content="Près de 5 ans d'expérience en Java, Spring Boot et Angular.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <nav class="topbar">
+        <span class="logo">TD</span>
+        <div class="lang" role="group" aria-label="Langue">
+          <button data-lang="fr" class="active">FR</button>
+          <button data-lang="en">EN</button>
+        </div>
+      </nav>
+      <div class="hero-grid">
+        <div class="photo">
+          <span class="initials">TD</span>
+          <img src="assets/photo.jpg" alt="Thierno Diallo" onerror="this.remove()">
+        </div>
+        <div class="hero-text">
+          <p class="badge"><span class="pulse"></span><span id="badge"></span></p>
+          <h1>Thierno <span class="grad">Diallo</span></h1>
+          <p class="role" id="role"></p>
+          <p class="profile" id="profile"></p>
+          <p class="links" id="links"></p>
+        </div>
+      </div>
+      <ul class="stats" id="stats"></ul>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <h2 id="t-exp"></h2>
+      <div id="experience"></div>
+    </section>
+
+    <section>
+      <h2 id="t-skills"></h2>
+      <div id="skills" class="skills"></div>
+    </section>
+
+    <section class="cols">
+      <div>
+        <h2 id="t-edu"></h2>
+        <ul id="education" class="plain"></ul>
+      </div>
+      <div>
+        <h2 id="t-cert"></h2>
+        <ul id="certifications" class="plain"></ul>
+      </div>
+      <div>
+        <h2 id="t-lang"></h2>
+        <ul id="languages" class="plain"></ul>
+      </div>
+    </section>
+    <section id="contact">
+      <h2 id="t-contact"></h2>
+      <ul id="contact-list" class="contact"></ul>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <p>© <span id="year"></span> Thierno Diallo</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
