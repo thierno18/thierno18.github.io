@@ -9,7 +9,11 @@ const DATA = {
   fr: {
     htmlLang: "fr",
     title: "Thierno Diallo — Développeur Full Stack Java / Angular",
-    badge: "Développeur chez Berger-Levrault",
+    badge: "Actuellement chez Berger-Levrault · BU Santé",
+    meta: "~5 ans d'expérience · 3 entreprises · santé et secteur public",
+    intro: "Applications métier robustes et évolutives, du besoin à la mise en production, avec un souci de la qualité du code, de l'architecture et de la maintenabilité.",
+    readMore: "Lire la suite",
+    nav: ["Expériences", "Compétences", "Formation", "Contact"],
     stats: [["~5 ans", "d'expérience"], ["3", "entreprises"], ["4", "projets métier"], ["3", "certifications"]],
     role: "Développeur <b>Full Stack Java / Angular</b>",
     profile:
@@ -53,7 +57,7 @@ const DATA = {
       },
       {
         company: "Inetum", group: "Inetum", client: "Rectorat Nancy-Metz", date: "Janv. 2022 — Fév. 2023", role: "Consultant informatique", tech: TECH.rect,
-        desc: "En mission chez le client, développement d'une application permettant à un élève ou à son représentant légal de faire une demande d'aménagement aux examens — <b>Incluscol</b>.",
+        desc: "En mission chez le client, développement d'une application permettant à un élève ou à son représentant légal de faire une demande d'aménagement aux examens — <a href='https://portail.ac-nancy-metz.fr/incluscol/' target='_blank' rel='noopener'><b>Incluscol</b></a>.",
         tasks: [
           "Reprendre et nationaliser l'application",
           "Assurer la maintenance et l'évolution de l'application",
@@ -108,7 +112,11 @@ const DATA = {
   en: {
     htmlLang: "en",
     title: "Thierno Diallo — Full Stack Java / Angular Developer",
-    badge: "Developer at Berger-Levrault",
+    badge: "Currently at Berger-Levrault · Healthcare BU",
+    meta: "~5 years of experience · 3 companies · healthcare and public sector",
+    intro: "Robust, scalable business applications, from the initial need to production, with a focus on code quality, architecture and maintainability.",
+    readMore: "Read more",
+    nav: ["Experience", "Skills", "Education", "Contact"],
     stats: [["~5 yrs", "of experience"], ["3", "companies"], ["4", "business projects"], ["3", "certifications"]],
     role: "<b>Full Stack Java / Angular</b> Developer",
     profile:
@@ -152,7 +160,7 @@ const DATA = {
       },
       {
         company: "Inetum", group: "Inetum", client: "Rectorat Nancy-Metz", date: "Jan. 2022 — Feb. 2023", role: "IT Consultant", tech: TECH.rect,
-        desc: "On assignment at the client, developed an application allowing a student or legal guardian to request exam accommodations — <b>Incluscol</b>.",
+        desc: "On assignment at the client, developed an application allowing a student or legal guardian to request exam accommodations — <a href='https://portail.ac-nancy-metz.fr/incluscol/' target='_blank' rel='noopener'><b>Incluscol</b></a>.",
         tasks: [
           "Take over and nationalise the application",
           "Maintain and evolve the application",
@@ -225,14 +233,18 @@ function render(lang) {
   document.documentElement.lang = d.htmlLang;
   document.title = d.title;
   $("badge").textContent = d.badge;
-  $("stats").innerHTML = d.stats.map(([n, l]) => `<li><b>${n}</b><span>${l}</span></li>`).join("");
+  $("meta").textContent = d.meta;
+  $("more-sum").textContent = d.readMore;
+  $("profile-full").textContent = d.profile;
+  $("tab-links").innerHTML = ["sec-exp", "sec-skills", "sec-edu", "contact"].map((id, i) => `<a href="#${id}">${d.nav[i]}</a>`).join("");
   $("role").innerHTML = d.role;
-  $("profile").textContent = d.profile;
+  $("profile").textContent = d.intro;
   $("links").innerHTML =
     `<a href="mailto:${EMAIL}">✉ ${EMAIL}</a>` +
     `<button type="button" class="copy" data-copy="${EMAIL}" data-label="${COPY_LABELS[lang].copy}" data-done="${COPY_LABELS[lang].done}">${COPY_LABELS[lang].copy}</button>` +
     `<a href="tel:${PHONE.replace(/\s/g, "")}">☎ ${PHONE}</a>` +
-    LINKS.map((l) => `<a href="${l.href}" target="_blank" rel="noopener">${l.label}</a>`).join("");
+    LINKS.map((l) => `<a href="${l.href}" target="_blank" rel="noopener">${l.label}</a>`).join("") +
+    `<span class="loc">${CONTACT_LABELS[lang].where}</span>`;
 
   const c = CONTACT_LABELS[lang];
   $("t-contact").textContent = "Contact";
