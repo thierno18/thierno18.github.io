@@ -185,8 +185,6 @@ img, svg { max-width: 100%; }
   .job-head { flex-direction: column; gap: 0; }
 }
 
-.links a.pdf { border-color: #3fd68f; color: #3fd68f; }
-.links a.pdf:hover { color: #fff; }
 
 @page { size: A4; margin: 12mm; }
 @media print {
@@ -241,3 +239,10 @@ img, svg { max-width: 100%; }
   .job { padding-bottom: 6px; }
   main section { margin: 8px 0; }
 }
+
+.tabs-in .lang { margin-left: auto; }
+.pdf-btn { flex: none; background: var(--accent); color: #fff; text-decoration: none; font-size: .85rem; padding: 6px 14px; border-radius: 8px; white-space: nowrap; transition: .2s; }
+.pdf-btn:hover { filter: brightness(1.1); transform: translateY(-1px); }
+.pdf-btn .short { display: none; }
+@media (max-width: 600px) { .pdf-btn .full { display: none; } .pdf-btn .short { display: inline; } .pdf-btn { padding: 6px 10px; } }
+@media print { .pdf-btn { display: none !important; } }
